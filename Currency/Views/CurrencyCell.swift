@@ -156,7 +156,7 @@ extension CurrencyCell {
         case .favourite:
             ivLike.isHidden = false
         case .alert:
-            break
+            lblAdditional.isHidden = false
         }
     }
 }

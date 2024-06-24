@@ -20,6 +20,7 @@
 		BBF779D32C298D9D00C5F199 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779D22C298D9D00C5F199 /* FavouriteViewController.swift */; };
 		BBF779D62C299C8E00C5F199 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779D52C299C8E00C5F199 /* BaseViewController.swift */; };
 		BBF779D92C299D2B00C5F199 /* Modals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779D82C299D2B00C5F199 /* Modals.swift */; };
+		BBF779DB2C29A31E00C5F199 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779DA2C29A31E00C5F199 /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BBF779D22C298D9D00C5F199 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		BBF779D52C299C8E00C5F199 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BBF779D82C299D2B00C5F199 /* Modals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modals.swift; sourceTree = "<group>"; };
+		BBF779DA2C29A31E00C5F199 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,7 @@
 				BBF779D42C299C7E00C5F199 /* Common */,
 				BBF779C72C294F0200C5F199 /* CurrenciesViewController.swift */,
 				BBF779D22C298D9D00C5F199 /* FavouriteViewController.swift */,
-				BBF779C52C280BF400C5F199 /* TabBarController.swift */,
+				BBF779DA2C29A31E00C5F199 /* AlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF779D52C299C8E00C5F199 /* BaseViewController.swift */,
+				BBF779C52C280BF400C5F199 /* TabBarController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				BBF779B02C28044600C5F199 /* SceneDelegate.swift in Sources */,
 				BBF779C82C294F0200C5F199 /* CurrenciesViewController.swift in Sources */,
 				BBF779D32C298D9D00C5F199 /* FavouriteViewController.swift in Sources */,
+				BBF779DB2C29A31E00C5F199 /* AlertViewController.swift in Sources */,
 				BBF779D12C296F8700C5F199 /* CurrencyCell.swift in Sources */,
 				BBF779C62C280BF400C5F199 /* TabBarController.swift in Sources */,
 				BBF779C32C28057C00C5F199 /* Extensions.swift in Sources */,

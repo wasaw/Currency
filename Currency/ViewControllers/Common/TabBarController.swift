@@ -34,7 +34,7 @@ final class TabBarContoller: UITabBarController {
         secondViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Favourite"), tag: 1)
         secondViewController.tabBarItem.imageInsets = imageInsets
         
-        let thirdViewController = CurrenciesViewController()
+        let thirdViewController = AlertViewController()
         thirdViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Notification"), tag: 2)
         thirdViewController.tabBarItem.imageInsets = imageInsets
         
