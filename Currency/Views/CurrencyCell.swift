@@ -12,6 +12,7 @@ private enum Constants {
     static let lblHorizontalPadding: CGFloat = 25.0
     static let lblShortHorizontalPadding: CGFloat = 12.0
     static let separatorHeight: CGFloat = 1.0
+    static let additionalPadding: CGFloat = 12.0
 }
 
 final class CurrencyCell: UITableViewCell {
@@ -58,6 +59,17 @@ final class CurrencyCell: UITableViewCell {
         return label
     }()
     
+    private lazy var tgHandleLike = UITapGestureRecognizer(target: self, action: #selector(handleLike))
+    private lazy var isFavourite = false
+    
+    private lazy var ivLike: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(named: "Like")
+        iv.addGestureRecognizer(tgHandleLike)
+        iv.isUserInteractionEnabled = true
+        return iv
+    }()
+    
     private lazy var vSeparator: UIView = {
         let view = UIView()
         view.backgroundColor = .separatorCellColor
@@ -86,6 +98,9 @@ final class CurrencyCell: UITableViewCell {
 // MARK: - Private API
 
 private extension CurrencyCell {
+    
+// MARK: - Helpers
+    
     func configureUI() {
         contentView.addSubview(ivLogo)
         ivLogo.centerY(inView: contentView)
@@ -105,7 +120,13 @@ private extension CurrencyCell {
         
         contentView.addSubview(lblAdditional)
         lblAdditional.centerY(inView: contentView)
-        lblAdditional.anchor(trailing: contentView.trailingAnchor, paddingTrailing: -Constants.lblVerticalPadding)
+        lblAdditional.anchor(trailing: contentView.trailingAnchor, paddingTrailing: -Constants.additionalPadding)
+        lblAdditional.isHidden = true
+        
+        contentView.addSubview(ivLike)
+        ivLike.centerY(inView: contentView)
+        ivLike.anchor(trailing: contentView.trailingAnchor, paddingTrailing: -Constants.additionalPadding)
+        ivLike.isHidden = true
         
         contentView.addSubview(vSeparator)
         vSeparator.anchor(leading: contentView.leadingAnchor,
@@ -114,5 +135,28 @@ private extension CurrencyCell {
                           height: Constants.separatorHeight)
 
         contentView.backgroundColor = .white
+    }
+    
+// MARK: - Selectors
+    
+    @objc func handleLike() {
+        isFavourite.toggle()
+        ivLike.image = isFavourite ? UIImage(named: "LikeFull") : UIImage(named: "Like")
+    }
+}
+
+
+// MARK: - Open API
+
+extension CurrencyCell {
+    func configure(for type: CellType) {
+        switch type {
+        case .currency:
+            lblAdditional.isHidden = false
+        case .favourite:
+            ivLike.isHidden = false
+        case .alert:
+            break
+        }
     }
 }

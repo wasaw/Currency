@@ -30,7 +30,7 @@ final class TabBarContoller: UITabBarController {
         firstViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Currencies"), tag: 0)
         firstViewController.tabBarItem.imageInsets = imageInsets
         
-        let secondViewController = CurrenciesViewController()
+        let secondViewController = FavouriteViewController()
         secondViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Favourite"), tag: 1)
         secondViewController.tabBarItem.imageInsets = imageInsets
         

@@ -17,6 +17,9 @@
 		BBF779CB2C2959CE00C5F199 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779CA2C2959CE00C5F199 /* CustomTabBar.swift */; };
 		BBF779CF2C29697100C5F199 /* Mulish-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBF779CE2C29697100C5F199 /* Mulish-VariableFont_wght.ttf */; };
 		BBF779D12C296F8700C5F199 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779D02C296F8700C5F199 /* CurrencyCell.swift */; };
+		BBF779D32C298D9D00C5F199 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779D22C298D9D00C5F199 /* FavouriteViewController.swift */; };
+		BBF779D62C299C8E00C5F199 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779D52C299C8E00C5F199 /* BaseViewController.swift */; };
+		BBF779D92C299D2B00C5F199 /* Modals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779D82C299D2B00C5F199 /* Modals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		BBF779CA2C2959CE00C5F199 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		BBF779CE2C29697100C5F199 /* Mulish-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		BBF779D02C296F8700C5F199 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		BBF779D22C298D9D00C5F199 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		BBF779D52C299C8E00C5F199 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BBF779D82C299D2B00C5F199 /* Modals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF779CD2C29695D00C5F199 /* Fonts */,
+				BBF779D72C299D0E00C5F199 /* Models */,
 				BBF779C92C2959A000C5F199 /* Views */,
 				BBF779CC2C295A3F00C5F199 /* ViewControllers */,
 				BBF779C42C28076600C5F199 /* App */,
@@ -105,7 +112,9 @@
 		BBF779CC2C295A3F00C5F199 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBF779D42C299C7E00C5F199 /* Common */,
 				BBF779C72C294F0200C5F199 /* CurrenciesViewController.swift */,
+				BBF779D22C298D9D00C5F199 /* FavouriteViewController.swift */,
 				BBF779C52C280BF400C5F199 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
@@ -117,6 +126,22 @@
 				BBF779CE2C29697100C5F199 /* Mulish-VariableFont_wght.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BBF779D42C299C7E00C5F199 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BBF779D52C299C8E00C5F199 /* BaseViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		BBF779D72C299D0E00C5F199 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBF779D82C299D2B00C5F199 /* Modals.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,10 +215,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF779D62C299C8E00C5F199 /* BaseViewController.swift in Sources */,
 				BBF779AE2C28044600C5F199 /* AppDelegate.swift in Sources */,
 				BBF779CB2C2959CE00C5F199 /* CustomTabBar.swift in Sources */,
+				BBF779D92C299D2B00C5F199 /* Modals.swift in Sources */,
 				BBF779B02C28044600C5F199 /* SceneDelegate.swift in Sources */,
 				BBF779C82C294F0200C5F199 /* CurrenciesViewController.swift in Sources */,
+				BBF779D32C298D9D00C5F199 /* FavouriteViewController.swift in Sources */,
 				BBF779D12C296F8700C5F199 /* CurrencyCell.swift in Sources */,
 				BBF779C62C280BF400C5F199 /* TabBarController.swift in Sources */,
 				BBF779C32C28057C00C5F199 /* Extensions.swift in Sources */,
