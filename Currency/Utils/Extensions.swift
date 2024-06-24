@@ -92,4 +92,48 @@ extension UIColor {
             UIColor(red: 0, green: 25/255, blue: 54/255, alpha: 1)
         }
     }
+    
+    static let titleColor = UIColor { traitCollection in
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            UIColor(red: 19/255, green: 28/255, blue: 46/255, alpha: 1)
+        case .dark:
+            UIColor(red: 19/255, green: 28/255, blue: 46/255, alpha: 1)
+        @unknown default:
+            UIColor(red: 19/255, green: 28/255, blue: 46/255, alpha: 1)
+        }
+    }
+    
+    static let priceColor = UIColor { traitCollection in
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            UIColor(red: 86/255, green: 86/255, blue: 86/255, alpha: 1)
+        case .dark:
+            UIColor(red: 86/255, green: 86/255, blue: 86/255, alpha: 1)
+        @unknown default:
+            UIColor(red: 86/255, green: 86/255, blue: 86/255, alpha: 1)
+        }
+    }
+    
+    static let shortCurrencyColor = UIColor { traitCollection in
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
+        case .dark:
+            UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
+        @unknown default:
+            UIColor(red: 146/255, green: 146/255, blue: 146/255, alpha: 1)
+        }
+    }
+    
+    static let separatorCellColor = UIColor { traitCollection in
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        case .dark:
+            UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        @unknown default:
+            UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        }
+    }
 }
