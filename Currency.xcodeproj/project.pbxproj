@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		BBF779AE2C28044600C5F199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779AD2C28044600C5F199 /* AppDelegate.swift */; };
 		BBF779B02C28044600C5F199 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779AF2C28044600C5F199 /* SceneDelegate.swift */; };
-		BBF779B22C28044600C5F199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779B12C28044600C5F199 /* ViewController.swift */; };
 		BBF779B72C28044800C5F199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF779B62C28044800C5F199 /* Assets.xcassets */; };
 		BBF779BA2C28044800C5F199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF779B82C28044800C5F199 /* LaunchScreen.storyboard */; };
+		BBF779C32C28057C00C5F199 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779C22C28057C00C5F199 /* Extensions.swift */; };
+		BBF779C62C280BF400C5F199 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779C52C280BF400C5F199 /* TabBarController.swift */; };
+		BBF779C82C294F0200C5F199 /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779C72C294F0200C5F199 /* CurrenciesViewController.swift */; };
+		BBF779CB2C2959CE00C5F199 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779CA2C2959CE00C5F199 /* CustomTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BBF779AA2C28044600C5F199 /* Currency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Currency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF779AD2C28044600C5F199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBF779AF2C28044600C5F199 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BBF779B12C28044600C5F199 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBF779B62C28044800C5F199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBF779B92C28044800C5F199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBF779BB2C28044800C5F199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBF779C22C28057C00C5F199 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BBF779C52C280BF400C5F199 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BBF779C72C294F0200C5F199 /* CurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
+		BBF779CA2C2959CE00C5F199 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		BBF779AC2C28044600C5F199 /* Currency */ = {
 			isa = PBXGroup;
 			children = (
-				BBF779AD2C28044600C5F199 /* AppDelegate.swift */,
-				BBF779AF2C28044600C5F199 /* SceneDelegate.swift */,
-				BBF779B12C28044600C5F199 /* ViewController.swift */,
+				BBF779C92C2959A000C5F199 /* Views */,
+				BBF779CC2C295A3F00C5F199 /* ViewControllers */,
+				BBF779C42C28076600C5F199 /* App */,
+				BBF779C12C28056B00C5F199 /* Utils */,
 				BBF779B62C28044800C5F199 /* Assets.xcassets */,
 				BBF779B82C28044800C5F199 /* LaunchScreen.storyboard */,
 				BBF779BB2C28044800C5F199 /* Info.plist */,
 			);
 			path = Currency;
+			sourceTree = "<group>";
+		};
+		BBF779C12C28056B00C5F199 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BBF779C22C28057C00C5F199 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BBF779C42C28076600C5F199 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BBF779AD2C28044600C5F199 /* AppDelegate.swift */,
+				BBF779AF2C28044600C5F199 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		BBF779C92C2959A000C5F199 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBF779CA2C2959CE00C5F199 /* CustomTabBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BBF779CC2C295A3F00C5F199 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BBF779C72C294F0200C5F199 /* CurrenciesViewController.swift */,
+				BBF779C52C280BF400C5F199 /* TabBarController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +175,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBF779B22C28044600C5F199 /* ViewController.swift in Sources */,
 				BBF779AE2C28044600C5F199 /* AppDelegate.swift in Sources */,
+				BBF779CB2C2959CE00C5F199 /* CustomTabBar.swift in Sources */,
 				BBF779B02C28044600C5F199 /* SceneDelegate.swift in Sources */,
+				BBF779C82C294F0200C5F199 /* CurrenciesViewController.swift in Sources */,
+				BBF779C62C280BF400C5F199 /* TabBarController.swift in Sources */,
+				BBF779C32C28057C00C5F199 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
