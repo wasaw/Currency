@@ -21,6 +21,7 @@
 		BBF779D62C299C8E00C5F199 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779D52C299C8E00C5F199 /* BaseViewController.swift */; };
 		BBF779D92C299D2B00C5F199 /* Modals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779D82C299D2B00C5F199 /* Modals.swift */; };
 		BBF779DB2C29A31E00C5F199 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779DA2C29A31E00C5F199 /* AlertViewController.swift */; };
+		BBF779DD2C29A4C000C5F199 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779DC2C29A4C000C5F199 /* PrivacyPolicyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BBF779D52C299C8E00C5F199 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BBF779D82C299D2B00C5F199 /* Modals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modals.swift; sourceTree = "<group>"; };
 		BBF779DA2C29A31E00C5F199 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		BBF779DC2C29A4C000C5F199 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				BBF779C72C294F0200C5F199 /* CurrenciesViewController.swift */,
 				BBF779D22C298D9D00C5F199 /* FavouriteViewController.swift */,
 				BBF779DA2C29A31E00C5F199 /* AlertViewController.swift */,
+				BBF779DC2C29A4C000C5F199 /* PrivacyPolicyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				BBF779D62C299C8E00C5F199 /* BaseViewController.swift in Sources */,
 				BBF779AE2C28044600C5F199 /* AppDelegate.swift in Sources */,
 				BBF779CB2C2959CE00C5F199 /* CustomTabBar.swift in Sources */,
+				BBF779DD2C29A4C000C5F199 /* PrivacyPolicyViewController.swift in Sources */,
 				BBF779D92C299D2B00C5F199 /* Modals.swift in Sources */,
 				BBF779B02C28044600C5F199 /* SceneDelegate.swift in Sources */,
 				BBF779C82C294F0200C5F199 /* CurrenciesViewController.swift in Sources */,

@@ -136,4 +136,15 @@ extension UIColor {
             UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
         }
     }
+    
+    static let policyTextColor = UIColor { traitCollection in
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            UIColor(red: 100/255, green: 117/255, blue: 139/255, alpha: 1)
+        case .dark:
+            UIColor(red: 100/255, green: 117/255, blue: 139/255, alpha: 1)
+        @unknown default:
+            UIColor(red: 100/255, green: 117/255, blue: 139/255, alpha: 1)
+        }
+    }
 }
