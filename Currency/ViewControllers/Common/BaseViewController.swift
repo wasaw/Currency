@@ -33,7 +33,7 @@ class BaseViewController: UIViewController {
         return label
     }()
     
-    private lazy var tvCurrency = UITableView(frame: .zero)
+    lazy var tvCurrency = UITableView(frame: .zero)
     
 // MARK: - Lifecycle
     

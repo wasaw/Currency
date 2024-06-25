@@ -116,7 +116,7 @@ private extension CurrencyCell {
         
         contentView.addSubview(lblShortTitle)
         lblShortTitle.centerY(inView: contentView, constant: -Constants.lblVerticalPadding)
-        lblShortTitle.anchor(leading: lblPrice.trailingAnchor, paddingLeading: Constants.lblShortHorizontalPadding)
+        lblShortTitle.anchor(leading: lblTitle.trailingAnchor, paddingLeading: Constants.lblShortHorizontalPadding)
         
         contentView.addSubview(lblAdditional)
         lblAdditional.centerY(inView: contentView)
@@ -149,7 +149,7 @@ private extension CurrencyCell {
 // MARK: - Open API
 
 extension CurrencyCell {
-    func configure(for type: CellType) {
+    func configure(for type: CellType, value: Currency? = nil) {
         switch type {
         case .currency:
             lblAdditional.isHidden = false
@@ -158,5 +158,11 @@ extension CurrencyCell {
         case .alert:
             lblAdditional.isHidden = false
         }
+        
+        guard let value = value else { return }
+        lblTitle.text = value.title
+        lblShortTitle.text = value.symbol
+        lblPrice.text = value.price
+        ivLogo.image = UIImage(named: value.title)
     }
 }

@@ -11,3 +11,9 @@ enum CellType {
     case favourite
     case alert
 }
+
+struct Currency {
+    let title: String
+    let symbol: String
+    let price: String
+}
