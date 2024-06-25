@@ -164,5 +164,6 @@ extension CurrencyCell {
         lblShortTitle.text = value.symbol
         lblPrice.text = value.price
         ivLogo.image = UIImage(named: value.title)
+        lblAdditional.text = value.lastPrice
     }
 }

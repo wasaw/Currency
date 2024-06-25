@@ -24,6 +24,8 @@
 		BBF779DD2C29A4C000C5F199 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779DC2C29A4C000C5F199 /* PrivacyPolicyViewController.swift */; };
 		BBF779E12C29BB0100C5F199 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779E02C29BB0100C5F199 /* Network.swift */; };
 		BBF779E32C2A982400C5F199 /* ModelNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779E22C2A982400C5F199 /* ModelNetwork.swift */; };
+		BBF779E62C2ABBA600C5F199 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBF779E42C2ABBA600C5F199 /* Model.xcdatamodeld */; };
+		BBF779E92C2ABCEA00C5F199 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779E82C2ABCEA00C5F199 /* CoreDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		BBF779DC2C29A4C000C5F199 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		BBF779E02C29BB0100C5F199 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BBF779E22C2A982400C5F199 /* ModelNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNetwork.swift; sourceTree = "<group>"; };
+		BBF779E52C2ABBA600C5F199 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BBF779E82C2ABCEA00C5F199 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				BBF779B62C28044800C5F199 /* Assets.xcassets */,
 				BBF779B82C28044800C5F199 /* LaunchScreen.storyboard */,
 				BBF779BB2C28044800C5F199 /* Info.plist */,
+				BBF779E42C2ABBA600C5F199 /* Model.xcdatamodeld */,
 			);
 			path = Currency;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		BBF779DE2C29BA9D00C5F199 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BBF779E72C2ABCD900C5F199 /* Core Data */,
 				BBF779DF2C29BAC200C5F199 /* Network */,
 			);
 			path = Core;
@@ -170,6 +176,14 @@
 				BBF779E02C29BB0100C5F199 /* Network.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		BBF779E72C2ABCD900C5F199 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				BBF779E82C2ABCEA00C5F199 /* CoreDataService.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +259,9 @@
 			files = (
 				BBF779E12C29BB0100C5F199 /* Network.swift in Sources */,
 				BBF779D62C299C8E00C5F199 /* BaseViewController.swift in Sources */,
+				BBF779E62C2ABBA600C5F199 /* Model.xcdatamodeld in Sources */,
 				BBF779AE2C28044600C5F199 /* AppDelegate.swift in Sources */,
+				BBF779E92C2ABCEA00C5F199 /* CoreDataService.swift in Sources */,
 				BBF779CB2C2959CE00C5F199 /* CustomTabBar.swift in Sources */,
 				BBF779DD2C29A4C000C5F199 /* PrivacyPolicyViewController.swift in Sources */,
 				BBF779D92C299D2B00C5F199 /* Model.swift in Sources */,
@@ -469,6 +485,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BBF779E42C2ABBA600C5F199 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BBF779E52C2ABBA600C5F199 /* Model.xcdatamodel */,
+			);
+			currentVersion = BBF779E52C2ABBA600C5F199 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BBF779A22C28044600C5F199 /* Project object */;
 }

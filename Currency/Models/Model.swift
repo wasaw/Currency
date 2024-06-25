@@ -16,4 +16,5 @@ struct Currency {
     let title: String
     let symbol: String
     let price: String
+    let lastPrice: String
 }

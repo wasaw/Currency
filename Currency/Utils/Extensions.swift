@@ -57,6 +57,23 @@ extension UIView {
     }
 }
 
+// MARK: - UserDefaults
+
+extension UserDefaults {
+    private enum Keys {
+        static let hasLaunchedBefore = "hasLaunchedBefore"
+    }
+
+    var isFirstLaunch: Bool {
+        get {
+            !UserDefaults.standard.bool(forKey: Keys.hasLaunchedBefore)
+        }
+        set {
+            UserDefaults.standard.set(!newValue, forKey: Keys.hasLaunchedBefore)
+        }
+    }
+}
+
 // MARK: - Colors
 
 extension UIColor {
