@@ -33,7 +33,7 @@ final class SelectedCurrencyViewController: UIViewController {
     
 // MARK: - Properties
     
-    private let exchangeRate: [Currency]
+    private let exchangeRate: [CurrencyPreview]
     private let selectedIndex: Int
     
     private var titleName: String { "Cryptocurrency" }
@@ -117,15 +117,14 @@ final class SelectedCurrencyViewController: UIViewController {
     
 // MARK: - Lifecycle
     
-    init(exchangeRate: [Currency], selectedIndex: Int) {
+    init(exchangeRate: [CurrencyPreview], selectedIndex: Int) {
         self.exchangeRate = exchangeRate
         self.selectedIndex = selectedIndex
         
         valueTVInformation.append(exchangeRate[selectedIndex].price)
-        print("DEBUG: \(exchangeRate[selectedIndex].mktcap)")
         valueTVInformation.append(exchangeRate[selectedIndex].mktcap)
-        valueTVInformation.append(exchangeRate[selectedIndex].volumeDay)
-        valueTVInformation.append(exchangeRate[selectedIndex].circulatingsupply)
+        valueTVInformation.append(exchangeRate[selectedIndex].volume)
+        valueTVInformation.append(exchangeRate[selectedIndex].circul)
                 
         super.init(nibName: nil, bundle: nil)
     }
@@ -154,7 +153,7 @@ final class SelectedCurrencyViewController: UIViewController {
 // MARK: Private API
 
 private extension SelectedCurrencyViewController {
-    func configure(_ currency: Currency) {
+    func configure(_ currency: CurrencyPreview) {
         ivLogo.image = UIImage(named: currency.title)
         lblTitleCurrency.text = currency.title
         lblPrice.text = currency.price

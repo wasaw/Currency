@@ -22,3 +22,15 @@ struct Currency {
     var mktcap: String = ""
     var circulatingsupply: String = ""
 }
+
+struct CurrencyPreview {
+    let title: String
+    let shortTitle: String
+    let price: String
+    let difference: String
+    let mktcap: String
+    let volume: String
+    let circul: String
+    let isRevenue: Bool
+    let isFavourite: Bool
+}

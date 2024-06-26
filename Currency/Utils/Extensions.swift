@@ -175,4 +175,15 @@ extension UIColor {
             UIColor(red: 0, green: 110/255, blue: 232/255, alpha: 1)
         }
     }
+    
+    static let revenueColor = UIColor { traitCollection in
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            UIColor(red: 48/255, green: 142/255, blue: 111/255, alpha: 1)
+        case .dark:
+            UIColor(red: 48/255, green: 142/255, blue: 111/255, alpha: 1)
+        @unknown default:
+            UIColor(red: 48/255, green: 142/255, blue: 111/255, alpha: 1)
+        }
+    }
 }

@@ -151,7 +151,7 @@ private extension CurrencyCell {
 // MARK: - Open API
 
 extension CurrencyCell {
-    func configure(for type: CellType, value: Currency? = nil) {
+    func configure(for type: CellType, value: CurrencyPreview? = nil) {
         switch type {
         case .currency:
             lblAdditional.isHidden = false
@@ -163,10 +163,11 @@ extension CurrencyCell {
         
         guard let value = value else { return }
         lblTitle.text = value.title
-        lblShortTitle.text = value.symbol
+        lblShortTitle.text = value.shortTitle
         lblPrice.text = value.price
         ivLogo.image = UIImage(named: value.title)
-        lblAdditional.text = value.lastPrice
+        lblAdditional.text = value.difference
+        lblAdditional.textColor = value.isRevenue ? .revenueColor : .red
         if value.isFavourite {
             ivLike.image = UIImage(named: "LikeFull")
             isFavourite.toggle()
