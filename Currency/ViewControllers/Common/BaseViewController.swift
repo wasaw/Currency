@@ -51,11 +51,9 @@ class BaseViewController: UIViewController {
         
         configureUI()
     }
-}
-
-// MARK: - Private API
-
-private extension BaseViewController {
+    
+// MARK: - Helpers
+    
     func configureUI() {
         view.addSubview(vContent)
         vContent.anchor(leading: view.leadingAnchor,
@@ -70,6 +68,11 @@ private extension BaseViewController {
         
         configureTableView()
     }
+}
+
+// MARK: - Private API
+
+private extension BaseViewController {
     
     func configureTableView() {
         tvCurrency.register(CurrencyCell.self, forCellReuseIdentifier: CurrencyCell.reuseIdentifire)

@@ -49,3 +49,12 @@ final class CurrenciesViewController: BaseViewController {
         }
     }
 }
+
+// MARK: - Private API
+
+private extension CurrenciesViewController {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = SelectedCurrencyViewController(exchangeRate: exchangeRate, selectedIndex: indexPath.row)
+        present(vc, animated: true)
+    }
+}

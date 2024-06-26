@@ -26,6 +26,8 @@
 		BBF779E32C2A982400C5F199 /* ModelNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779E22C2A982400C5F199 /* ModelNetwork.swift */; };
 		BBF779E62C2ABBA600C5F199 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBF779E42C2ABBA600C5F199 /* Model.xcdatamodeld */; };
 		BBF779E92C2ABCEA00C5F199 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779E82C2ABCEA00C5F199 /* CoreDataService.swift */; };
+		BBF779EB2C2AE94300C5F199 /* SelectedCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779EA2C2AE94300C5F199 /* SelectedCurrencyViewController.swift */; };
+		BBF779ED2C2B04E100C5F199 /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779EC2C2B04E100C5F199 /* InformationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		BBF779E22C2A982400C5F199 /* ModelNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNetwork.swift; sourceTree = "<group>"; };
 		BBF779E52C2ABBA600C5F199 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		BBF779E82C2ABCEA00C5F199 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		BBF779EA2C2AE94300C5F199 /* SelectedCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCurrencyViewController.swift; sourceTree = "<group>"; };
+		BBF779EC2C2B04E100C5F199 /* InformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			children = (
 				BBF779CA2C2959CE00C5F199 /* CustomTabBar.swift */,
 				BBF779D02C296F8700C5F199 /* CurrencyCell.swift */,
+				BBF779EC2C2B04E100C5F199 /* InformationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				BBF779D22C298D9D00C5F199 /* FavouriteViewController.swift */,
 				BBF779DA2C29A31E00C5F199 /* AlertViewController.swift */,
 				BBF779DC2C29A4C000C5F199 /* PrivacyPolicyViewController.swift */,
+				BBF779EA2C2AE94300C5F199 /* SelectedCurrencyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,7 +273,9 @@
 				BBF779D92C299D2B00C5F199 /* Model.swift in Sources */,
 				BBF779B02C28044600C5F199 /* SceneDelegate.swift in Sources */,
 				BBF779C82C294F0200C5F199 /* CurrenciesViewController.swift in Sources */,
+				BBF779EB2C2AE94300C5F199 /* SelectedCurrencyViewController.swift in Sources */,
 				BBF779E32C2A982400C5F199 /* ModelNetwork.swift in Sources */,
+				BBF779ED2C2B04E100C5F199 /* InformationCell.swift in Sources */,
 				BBF779D32C298D9D00C5F199 /* FavouriteViewController.swift in Sources */,
 				BBF779DB2C29A31E00C5F199 /* AlertViewController.swift in Sources */,
 				BBF779D12C296F8700C5F199 /* CurrencyCell.swift in Sources */,
