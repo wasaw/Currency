@@ -38,6 +38,8 @@ final class SelectedCurrencyViewController: UIViewController {
     
     private var titleName: String { "Cryptocurrency" }
     private var isFavourite: Bool = false
+    private let titleTVInformation: [String] = ["Change (24h)", "Market Cap", "Volume (24Hh)", "Circ. Supply"]
+    private var valueTVInformation: [String] = []
     
     private lazy var tgHandleLike = UITapGestureRecognizer(target: self, action: #selector(handleLike))
     
@@ -118,6 +120,12 @@ final class SelectedCurrencyViewController: UIViewController {
     init(exchangeRate: [Currency], selectedIndex: Int) {
         self.exchangeRate = exchangeRate
         self.selectedIndex = selectedIndex
+        
+        valueTVInformation.append(exchangeRate[selectedIndex].price)
+        print("DEBUG: \(exchangeRate[selectedIndex].mktcap)")
+        valueTVInformation.append(exchangeRate[selectedIndex].mktcap)
+        valueTVInformation.append(exchangeRate[selectedIndex].volumeDay)
+        valueTVInformation.append(exchangeRate[selectedIndex].circulatingsupply)
                 
         super.init(nibName: nil, bundle: nil)
     }
@@ -234,6 +242,7 @@ private extension SelectedCurrencyViewController {
         tvInformation.dataSource = self
         tvCurrency.delegate = self
         tvInformation.separatorStyle = .none
+        tvInformation.isScrollEnabled = false
         vInformation.addSubview(tvInformation)
         tvInformation.anchor(leading: vInformation.leadingAnchor,
                           top: lblPrice.bottomAnchor,
@@ -290,7 +299,8 @@ extension SelectedCurrencyViewController: UITableViewDataSource {
         
         if tableView == tvInformation,
            let cell = tableView.dequeueReusableCell(withIdentifier: InformationCell.reuseIdentifire, for: indexPath) as? InformationCell {
-            
+            guard indexPath.row < titleTVInformation.count else { return cell }
+            cell.configure(leadingTitle: titleTVInformation[indexPath.row], trailingTitle: valueTVInformation[indexPath.row])
             return cell
         }
         

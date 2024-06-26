@@ -35,14 +35,21 @@ final class CurrenciesViewController: BaseViewController {
                 guard let title = currency.title,
                       let symbol = currency.shortTitle else { return nil }
                 
+                
                 let price = "$" + String(currency.price)
                 let result = ((currency.price - currency.lastPrice) / currency.price) * 100
                 let str = String(format: "%.2f", result) + "%"
+                let stMktcap = String(format: "%.2f", currency.mktcap)
+                let stVolume = String(format: "%.2f", currency.volumeDay)
+                let stCircul = String(format: "%.2f", currency.circul)
 
                 return Currency(title: title,
                                 symbol: symbol,
                                 price: price,
-                                lastPrice: str)
+                                lastPrice: str,
+                                volumeDay: stVolume,
+                                mktcap: stMktcap,
+                                circulatingsupply: stCircul)
             })
         } catch {
             print(error.localizedDescription)

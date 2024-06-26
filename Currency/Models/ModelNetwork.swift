@@ -46,6 +46,7 @@ struct PurpleUSD: Codable {
     let toptiervolume24Hour, toptiervolume24Hourto, change24Hour, changepct24Hour: String
     let changeday, changepctday, changehour, changepcthour: String
     let conversiontype, conversionsymbol, conversionlastupdate, supply: String
+    let mktcap, circulatingsupply: String
     let imageurl: String
 
     enum CodingKeys: String, CodingKey {
@@ -73,12 +74,14 @@ struct PurpleUSD: Codable {
         case openhour = "OPENHOUR"
         case highhour = "HIGHHOUR"
         case lowhour = "LOWHOUR"
+        case mktcap = "MKTCAP"
         case toptiervolume24Hour = "TOPTIERVOLUME24HOUR"
         case toptiervolume24Hourto = "TOPTIERVOLUME24HOURTO"
         case change24Hour = "CHANGE24HOUR"
         case changepct24Hour = "CHANGEPCT24HOUR"
         case changeday = "CHANGEDAY"
         case changepctday = "CHANGEPCTDAY"
+        case circulatingsupply = "CIRCULATINGSUPPLY"
         case changehour = "CHANGEHOUR"
         case changepcthour = "CHANGEPCTHOUR"
         case conversiontype = "CONVERSIONTYPE"

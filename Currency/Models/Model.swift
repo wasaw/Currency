@@ -18,4 +18,7 @@ struct Currency {
     let price: String
     let lastPrice: String
     var isFavourite: Bool = false
+    var volumeDay: String = ""
+    var mktcap: String = ""
+    var circulatingsupply: String = ""
 }

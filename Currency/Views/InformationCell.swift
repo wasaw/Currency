@@ -80,3 +80,12 @@ private extension InformationCell {
         contentView.backgroundColor = .white
     }
 }
+
+// MARK: - Public API
+
+extension InformationCell {
+    func configure(leadingTitle: String, trailingTitle: String) {
+        lblLeading.text = leadingTitle
+        lblTrailing.text = trailingTitle
+    }
+}
