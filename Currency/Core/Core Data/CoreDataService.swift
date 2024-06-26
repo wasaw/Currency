@@ -46,4 +46,20 @@ extension CoreDataService {
             }
         }
     }
+    
+    func updateIsFavourite(title: String) {
+        let fetchRequest = CurrencyManagedObject.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "title ==%@", title)
+        
+        do {
+            let result = try viewContext.fetch(fetchRequest)
+            
+            if let currency = result.first {
+                currency.isFavourite.toggle()
+                try viewContext.save()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }

@@ -17,4 +17,5 @@ struct Currency {
     let symbol: String
     let price: String
     let lastPrice: String
+    var isFavourite: Bool = false
 }

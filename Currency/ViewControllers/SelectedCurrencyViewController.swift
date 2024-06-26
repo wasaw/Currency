@@ -37,6 +37,9 @@ final class SelectedCurrencyViewController: UIViewController {
     private let selectedIndex: Int
     
     private var titleName: String { "Cryptocurrency" }
+    private var isFavourite: Bool = false
+    
+    private lazy var tgHandleLike = UITapGestureRecognizer(target: self, action: #selector(handleLike))
     
     private lazy var vContent: UIView = {
         let view = UIView()
@@ -79,7 +82,7 @@ final class SelectedCurrencyViewController: UIViewController {
     private lazy var ivLike: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "Like")
-//        iv.addGestureRecognizer(tgHandleLike)
+        iv.addGestureRecognizer(tgHandleLike)
         iv.isUserInteractionEnabled = true
         return iv
     }()
@@ -256,6 +259,14 @@ private extension SelectedCurrencyViewController {
                           bottom: btnAlert.bottomAnchor,
                           paddingBottom: Constants.btnVerticalPadding,
                           height: Constants.separatorHeight)
+    }
+    
+// MARK: - Selectors
+    
+    @objc func handleLike() {
+        isFavourite.toggle()
+        ivLike.image = isFavourite ? UIImage(named: "LikeFull") : UIImage(named: "Like")
+        CoreDataService().updateIsFavourite(title: exchangeRate[selectedIndex].title)
     }
 }
 

@@ -142,6 +142,8 @@ private extension CurrencyCell {
     @objc func handleLike() {
         isFavourite.toggle()
         ivLike.image = isFavourite ? UIImage(named: "LikeFull") : UIImage(named: "Like")
+        guard let title = lblTitle.text else { return }
+        CoreDataService().updateIsFavourite(title: title)
     }
 }
 
@@ -165,5 +167,9 @@ extension CurrencyCell {
         lblPrice.text = value.price
         ivLogo.image = UIImage(named: value.title)
         lblAdditional.text = value.lastPrice
+        if value.isFavourite {
+            ivLike.image = UIImage(named: "LikeFull")
+            isFavourite.toggle()
+        }
     }
 }
