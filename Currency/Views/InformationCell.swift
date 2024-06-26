@@ -84,8 +84,10 @@ private extension InformationCell {
 // MARK: - Public API
 
 extension InformationCell {
-    func configure(leadingTitle: String, trailingTitle: String) {
+    func configure(leadingTitle: String, trailingTitle: String, isRevenue: Bool? = nil) {
         lblLeading.text = leadingTitle
         lblTrailing.text = trailingTitle
+        guard let isRevenue = isRevenue else { return }
+        lblTrailing.textColor = isRevenue ? .revenueColor : .red
     }
 }

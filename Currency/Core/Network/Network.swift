@@ -6,7 +6,7 @@
 
 import Foundation
 
-final class Network {
+final class Network: NetworkServiceProtocol {
     
 // MARK: - Properties
     
@@ -21,7 +21,11 @@ final class Network {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         userDefault = UserDefaults.standard
     }
-    
+}
+
+// MARK: - Public API
+
+extension Network {
 // MARK: - Helpers
     
     func loadData(request: URLRequest, completion: @escaping(Result<CurrencyDataModel, Error>) -> Void) {

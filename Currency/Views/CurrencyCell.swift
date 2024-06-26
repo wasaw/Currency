@@ -20,6 +20,8 @@ final class CurrencyCell: UITableViewCell {
     
 // MARK: - Properties
     
+    private let coreData = CoreDataService.shared
+    
     private lazy var ivLogo: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "Cell")
@@ -143,7 +145,7 @@ private extension CurrencyCell {
         isFavourite.toggle()
         ivLike.image = isFavourite ? UIImage(named: "LikeFull") : UIImage(named: "Like")
         guard let title = lblTitle.text else { return }
-        CoreDataService().updateIsFavourite(title: title)
+        CoreDataService.shared.updateIsFavourite(title: title)
     }
 }
 

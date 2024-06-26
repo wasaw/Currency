@@ -33,6 +33,8 @@ final class SelectedCurrencyViewController: UIViewController {
     
 // MARK: - Properties
     
+    private let coreData = CoreDataService.shared
+    
     private let exchangeRate: [CurrencyPreview]
     private let selectedIndex: Int
     
@@ -121,7 +123,7 @@ final class SelectedCurrencyViewController: UIViewController {
         self.exchangeRate = exchangeRate
         self.selectedIndex = selectedIndex
         
-        valueTVInformation.append(exchangeRate[selectedIndex].price)
+        valueTVInformation.append(exchangeRate[selectedIndex].difference)
         valueTVInformation.append(exchangeRate[selectedIndex].mktcap)
         valueTVInformation.append(exchangeRate[selectedIndex].volume)
         valueTVInformation.append(exchangeRate[selectedIndex].circul)
@@ -274,7 +276,7 @@ private extension SelectedCurrencyViewController {
     @objc func handleLike() {
         isFavourite.toggle()
         ivLike.image = isFavourite ? UIImage(named: "LikeFull") : UIImage(named: "Like")
-        CoreDataService().updateIsFavourite(title: exchangeRate[selectedIndex].title)
+        coreData.updateIsFavourite(title: exchangeRate[selectedIndex].title)
     }
 }
 
@@ -299,7 +301,12 @@ extension SelectedCurrencyViewController: UITableViewDataSource {
         if tableView == tvInformation,
            let cell = tableView.dequeueReusableCell(withIdentifier: InformationCell.reuseIdentifire, for: indexPath) as? InformationCell {
             guard indexPath.row < titleTVInformation.count else { return cell }
-            cell.configure(leadingTitle: titleTVInformation[indexPath.row], trailingTitle: valueTVInformation[indexPath.row])
+            if indexPath.row == 0 {
+                cell.configure(leadingTitle: titleTVInformation[indexPath.row], 
+                               trailingTitle: valueTVInformation[indexPath.row], isRevenue: exchangeRate[selectedIndex].isRevenue)
+            } else {
+                cell.configure(leadingTitle: titleTVInformation[indexPath.row], trailingTitle: valueTVInformation[indexPath.row])
+            }
             return cell
         }
         

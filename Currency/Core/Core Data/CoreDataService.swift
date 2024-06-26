@@ -6,7 +6,8 @@
 
 import CoreData
 
-final class CoreDataService {
+final class CoreDataService: CoreDataServiceProtocol {
+    static let shared = CoreDataService()
     
 // MARK: - Properties
     

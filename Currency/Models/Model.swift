@@ -12,15 +12,14 @@ enum CellType {
     case alert
 }
 
-struct Currency {
+struct CurrencyModel {
     let title: String
-    let symbol: String
-    let price: String
-    let lastPrice: String
-    var isFavourite: Bool = false
-    var volumeDay: String = ""
-    var mktcap: String = ""
-    var circulatingsupply: String = ""
+    let shortTitle: String
+    let price: Double
+    let lastPrice: Double
+    var volumeDay: Double
+    var mktcap: Double
+    var circulatingsupply: Double
 }
 
 struct CurrencyPreview {

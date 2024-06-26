@@ -30,6 +30,8 @@
 		BBF779ED2C2B04E100C5F199 /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779EC2C2B04E100C5F199 /* InformationCell.swift */; };
 		BBF779F12C2C4E6A00C5F199 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F02C2C4E6A00C5F199 /* CurrencyService.swift */; };
 		BBF779F32C2C516300C5F199 /* CurrencyServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F22C2C516300C5F199 /* CurrencyServiceProtocol.swift */; };
+		BBF779F52C2C99E600C5F199 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F42C2C99E600C5F199 /* CoreDataServiceProtocol.swift */; };
+		BBF779F72C2C9B2600C5F199 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F62C2C9B2600C5F199 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		BBF779EC2C2B04E100C5F199 /* InformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCell.swift; sourceTree = "<group>"; };
 		BBF779F02C2C4E6A00C5F199 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		BBF779F22C2C516300C5F199 /* CurrencyServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyServiceProtocol.swift; sourceTree = "<group>"; };
+		BBF779F42C2C99E600C5F199 /* CoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceProtocol.swift; sourceTree = "<group>"; };
+		BBF779F62C2C9B2600C5F199 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF779E02C29BB0100C5F199 /* Network.swift */,
+				BBF779F62C2C9B2600C5F199 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF779E82C2ABCEA00C5F199 /* CoreDataService.swift */,
+				BBF779F42C2C99E600C5F199 /* CoreDataServiceProtocol.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF779F72C2C9B2600C5F199 /* NetworkService.swift in Sources */,
 				BBF779E12C29BB0100C5F199 /* Network.swift in Sources */,
 				BBF779D62C299C8E00C5F199 /* BaseViewController.swift in Sources */,
 				BBF779F32C2C516300C5F199 /* CurrencyServiceProtocol.swift in Sources */,
@@ -298,6 +305,7 @@
 				BBF779C82C294F0200C5F199 /* CurrenciesViewController.swift in Sources */,
 				BBF779F12C2C4E6A00C5F199 /* CurrencyService.swift in Sources */,
 				BBF779EB2C2AE94300C5F199 /* SelectedCurrencyViewController.swift in Sources */,
+				BBF779F52C2C99E600C5F199 /* CoreDataServiceProtocol.swift in Sources */,
 				BBF779E32C2A982400C5F199 /* ModelNetwork.swift in Sources */,
 				BBF779ED2C2B04E100C5F199 /* InformationCell.swift in Sources */,
 				BBF779D32C298D9D00C5F199 /* FavouriteViewController.swift in Sources */,
