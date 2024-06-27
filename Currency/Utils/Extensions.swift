@@ -208,4 +208,15 @@ extension UIColor {
             UIColor(red: 242/255, green: 0, blue: 0, alpha: 1)
         }
     }
+    
+    static let seletedColor = UIColor { traitCollection in
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            UIColor(red: 53/255, green: 149/255, blue: 1, alpha: 1)
+        case .dark:
+            UIColor(red: 53/255, green: 149/255, blue: 1, alpha: 1)
+        @unknown default:
+            UIColor(red: 53/255, green: 149/255, blue: 1, alpha: 1)
+        }
+    }
 }

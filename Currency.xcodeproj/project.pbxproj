@@ -34,6 +34,10 @@
 		BBF779F72C2C9B2600C5F199 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F62C2C9B2600C5F199 /* NetworkService.swift */; };
 		BBF779F92C2D4C5D00C5F199 /* AddAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F82C2D4C5D00C5F199 /* AddAlertViewController.swift */; };
 		BBF779FB2C2D6B4700C5F199 /* ChangeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779FA2C2D6B4700C5F199 /* ChangeAlertViewController.swift */; };
+		BBF779FE2C2DA23400C5F199 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779FD2C2DA23400C5F199 /* GetStartedViewController.swift */; };
+		BBF77A012C2DAAB100C5F199 /* FavouritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF77A002C2DAAB100C5F199 /* FavouritesListViewController.swift */; };
+		BBF77A032C2DAB0200C5F199 /* BaseOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF77A022C2DAB0200C5F199 /* BaseOnboardingViewController.swift */; };
+		BBF77A052C2DAE2400C5F199 /* AlertsNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF77A042C2DAE2400C5F199 /* AlertsNotificationsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +70,10 @@
 		BBF779F62C2C9B2600C5F199 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		BBF779F82C2D4C5D00C5F199 /* AddAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertViewController.swift; sourceTree = "<group>"; };
 		BBF779FA2C2D6B4700C5F199 /* ChangeAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAlertViewController.swift; sourceTree = "<group>"; };
+		BBF779FD2C2DA23400C5F199 /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		BBF77A002C2DAAB100C5F199 /* FavouritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesListViewController.swift; sourceTree = "<group>"; };
+		BBF77A022C2DAB0200C5F199 /* BaseOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOnboardingViewController.swift; sourceTree = "<group>"; };
+		BBF77A042C2DAE2400C5F199 /* AlertsNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsNotificationsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,7 @@
 		BBF779CC2C295A3F00C5F199 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBF779FC2C2DA0B500C5F199 /* Onboarding */,
 				BBF779D42C299C7E00C5F199 /* Common */,
 				BBF779C72C294F0200C5F199 /* CurrenciesViewController.swift */,
 				BBF779D22C298D9D00C5F199 /* FavouriteViewController.swift */,
@@ -169,6 +178,7 @@
 			children = (
 				BBF779D52C299C8E00C5F199 /* BaseViewController.swift */,
 				BBF779C52C280BF400C5F199 /* TabBarController.swift */,
+				BBF77A022C2DAB0200C5F199 /* BaseOnboardingViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -224,6 +234,16 @@
 				BBF779F22C2C516300C5F199 /* CurrencyServiceProtocol.swift */,
 			);
 			path = Currency;
+			sourceTree = "<group>";
+		};
+		BBF779FC2C2DA0B500C5F199 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BBF779FD2C2DA23400C5F199 /* GetStartedViewController.swift */,
+				BBF77A002C2DAAB100C5F199 /* FavouritesListViewController.swift */,
+				BBF77A042C2DAE2400C5F199 /* AlertsNotificationsViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,9 +326,12 @@
 				BBF779AE2C28044600C5F199 /* AppDelegate.swift in Sources */,
 				BBF779FB2C2D6B4700C5F199 /* ChangeAlertViewController.swift in Sources */,
 				BBF779E92C2ABCEA00C5F199 /* CoreDataService.swift in Sources */,
+				BBF779FE2C2DA23400C5F199 /* GetStartedViewController.swift in Sources */,
 				BBF779CB2C2959CE00C5F199 /* CustomTabBar.swift in Sources */,
 				BBF779DD2C29A4C000C5F199 /* PrivacyPolicyViewController.swift in Sources */,
+				BBF77A012C2DAAB100C5F199 /* FavouritesListViewController.swift in Sources */,
 				BBF779D92C299D2B00C5F199 /* Model.swift in Sources */,
+				BBF77A052C2DAE2400C5F199 /* AlertsNotificationsViewController.swift in Sources */,
 				BBF779B02C28044600C5F199 /* SceneDelegate.swift in Sources */,
 				BBF779C82C294F0200C5F199 /* CurrenciesViewController.swift in Sources */,
 				BBF779F12C2C4E6A00C5F199 /* CurrencyService.swift in Sources */,
@@ -318,6 +341,7 @@
 				BBF779ED2C2B04E100C5F199 /* InformationCell.swift in Sources */,
 				BBF779D32C298D9D00C5F199 /* FavouriteViewController.swift in Sources */,
 				BBF779DB2C29A31E00C5F199 /* AlertViewController.swift in Sources */,
+				BBF77A032C2DAB0200C5F199 /* BaseOnboardingViewController.swift in Sources */,
 				BBF779D12C296F8700C5F199 /* CurrencyCell.swift in Sources */,
 				BBF779C62C280BF400C5F199 /* TabBarController.swift in Sources */,
 				BBF779C32C28057C00C5F199 /* Extensions.swift in Sources */,

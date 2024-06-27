@@ -14,13 +14,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = TabBarContoller()
         
         let isFirstLaunch = UserDefaults.standard.isFirstLaunch
         if isFirstLaunch {
+            window?.rootViewController = UINavigationController(rootViewController: GetStartedViewController())
             UserDefaults.standard.isFirstLaunch = false
-            
             CurrencyService.shared.loadCurrency()
+        } else {
+            window?.rootViewController = TabBarContoller()
         }
         
         window?.makeKeyAndVisible()
