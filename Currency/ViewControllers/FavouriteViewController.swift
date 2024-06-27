@@ -31,5 +31,7 @@ final class FavouriteViewController: BaseViewController {
                 return currency.isFavourite ? currency : nil
             })
         }
+        
+        hideSearch()
     }
 }

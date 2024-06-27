@@ -27,6 +27,13 @@ private enum Constants {
     static let btnWidth: CGFloat = 160.0
     static let btnHeight: CGFloat = 45.0
     static let tvInformationCount: Int = 5
+    static let vSearchPaddingTop: CGFloat = 10.0
+    static let vSearchWidth: CGFloat = 200.0
+    static let vSearchHeight: CGFloat = 38.0
+    static let ivSearchDimensions: CGFloat = 15.0
+    static let ivSearchPaddingLeading: CGFloat = 39.0
+    static let tfSearchPaddingHorizontal: CGFloat = 10.0
+    static let vSeparatorHeight: CGFloat = 1.0
 }
 
 final class SelectedCurrencyViewController: UIViewController {
@@ -36,6 +43,7 @@ final class SelectedCurrencyViewController: UIViewController {
     private let coreData = CoreDataService.shared
     
     private let exchangeRate: [CurrencyPreview]
+    private var filteredExchangeRate: [CurrencyPreview] = []
     private let selectedIndex: Int
     
     private var titleName: String { "Cryptocurrency" }
@@ -117,10 +125,39 @@ final class SelectedCurrencyViewController: UIViewController {
         return view
     }()
     
+    private lazy var vSearch: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    private lazy var ivSearch: UIImageView = {
+        let iv = UIImageView()
+        iv.image = UIImage(named: "Search")
+        return iv
+    }()
+    
+    private lazy var tfSearch: UITextField = {
+        let tf = UITextField()
+        let placeholderAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.black,
+            .font: UIFont(name: "MulishRoman-Medium", size: 18) ?? UIFont.systemFont(ofSize: 18)
+        ]
+        tf.attributedPlaceholder = NSAttributedString(string: "Find coins...", attributes: placeholderAttributes)
+        tf.textColor = .black
+        tf.delegate = self
+        return tf
+    }()
+    private lazy var vSearchSeparator: UIView = {
+        let view = UIView()
+        view.backgroundColor = .separatorCellColor
+        return view
+    }()
+    
 // MARK: - Lifecycle
     
     init(exchangeRate: [CurrencyPreview], selectedIndex: Int) {
         self.exchangeRate = exchangeRate
+        self.filteredExchangeRate = exchangeRate
         self.selectedIndex = selectedIndex
         
         valueTVInformation.append(exchangeRate[selectedIndex].difference)
@@ -173,21 +210,48 @@ private extension SelectedCurrencyViewController {
         lblTitle.centerX(inView: vContent)
         lblTitle.anchor(top: vContent.topAnchor, paddingTop: Constants.titlePadding)
         
+        configureSearch()
+        configureInformationView()
+        configureTableView()
+        configureBtn()
+    }
+    
+    func configureSearch() {
+        vContent.addSubview(vSearch)
+        vSearch.centerX(inView: vContent)
+        vSearch.anchor(top: lblTitle.bottomAnchor,
+                       paddingTop: Constants.vSearchPaddingTop,
+                       width: Constants.vSearchWidth,
+                       height: Constants.vSearchHeight)
+        
+        vSearch.addSubview(ivSearch)
+        ivSearch.centerY(inView: vSearch)
+        ivSearch.anchor(leading: vSearch.leadingAnchor,
+                        paddingLeading: Constants.ivSearchPaddingLeading,
+                        width: Constants.ivSearchDimensions,
+                        height: Constants.ivSearchDimensions)
+        
+        vSearch.addSubview(tfSearch)
+        tfSearch.centerY(inView: vSearch)
+        tfSearch.anchor(leading: ivSearch.trailingAnchor, trailing: vSearch.trailingAnchor, paddingLeading: Constants.tfSearchPaddingHorizontal, paddingTrailing: -Constants.tfSearchPaddingHorizontal)
+        
+        vSearch.addSubview(vSearchSeparator)
+        vSearchSeparator.anchor(leading: vSearch.leadingAnchor,
+                          trailing: vSearch.trailingAnchor,
+                          bottom: vSearch.bottomAnchor,
+                          height: Constants.vSeparatorHeight)
+    }
+    
+    func configureInformationView() {
         view.addSubview(vInformation)
         vInformation.anchor(leading: view.leadingAnchor,
-                            top: lblTitle.bottomAnchor,
+                            top: vSearch.bottomAnchor,
                             trailing: view.trailingAnchor,
                             paddingLeading: Constants.tvPadding,
                             paddingTop: Constants.titlePadding,
                             paddingTrailing: -Constants.tvPadding,
                             height: Constants.informationHeight)
         
-        configureInformationView()
-        configureTableView()
-        configureBtn()
-    }
-    
-    func configureInformationView() {
         vInformation.addSubview(ivLogo)
         ivLogo.anchor(leading: vInformation.leadingAnchor,
                       top: vInformation.topAnchor,
@@ -271,6 +335,15 @@ private extension SelectedCurrencyViewController {
                           height: Constants.separatorHeight)
     }
     
+    func filterData(searchText: String) {
+        if searchText.isEmpty {
+            filteredExchangeRate = exchangeRate
+        } else {
+            filteredExchangeRate = exchangeRate.filter{ $0.title.lowercased().contains(searchText.lowercased()) }
+        }
+        tvCurrency.reloadData()
+    }
+    
 // MARK: - Selectors
     
     @objc func handleLike() {
@@ -287,13 +360,13 @@ extension SelectedCurrencyViewController: UITableViewDataSource {
         if tableView == tvInformation {
             return Constants.tvInformationCount
         }
-        return exchangeRate.count
+        return filteredExchangeRate.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == tvCurrency,
            let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyCell.reuseIdentifire, for: indexPath) as? CurrencyCell {
-            cell.configure(for: .currency, value: exchangeRate[indexPath.row])
+            cell.configure(for: .currency, value: filteredExchangeRate[indexPath.row])
             
             return cell
         }
@@ -323,5 +396,20 @@ extension SelectedCurrencyViewController: UITableViewDelegate {
         }
         
         return Constants.rowHeight
+    }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension SelectedCurrencyViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let currentText = textField.text ?? ""
+        
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        filterData(searchText: updatedText)
+        
+        return true
     }
 }

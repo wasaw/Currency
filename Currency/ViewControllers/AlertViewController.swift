@@ -8,6 +8,14 @@ import UIKit
 
 final class AlertViewController: BaseViewController {
     
+// MARK: - Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        hideSearch()
+    }
+    
     override var titleName: String { "Alerts" }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
