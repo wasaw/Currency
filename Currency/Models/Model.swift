@@ -30,6 +30,17 @@ struct CurrencyPreview {
     let mktcap: String
     let volume: String
     let circul: String
+    let alert: String?
     let isRevenue: Bool
     let isFavourite: Bool
+    let isPositiveAlert: Bool?
+}
+
+struct AlertPreview {
+    let id: UUID
+    let title: String
+    let shortTitle: String
+    let price: String
+    let alert: String
+    let isPositiveAlert: Bool
 }

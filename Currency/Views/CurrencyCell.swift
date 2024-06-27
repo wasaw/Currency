@@ -174,5 +174,30 @@ extension CurrencyCell {
             ivLike.image = UIImage(named: "LikeFull")
             isFavourite.toggle()
         }
+        
+        guard let isPositiveAlert = value.isPositiveAlert,
+              let value = value.alert else { return }
+        lblAdditional.textColor = isPositiveAlert ? .revenueColor : .red
+        lblAdditional.text = "$" + value
+    }
+    
+    func configure(for type: CellType, value: AlertPreview? = nil) {
+        switch type {
+        case .currency:
+            lblAdditional.isHidden = false
+        case .favourite:
+            ivLike.isHidden = false
+        case .alert:
+            lblAdditional.isHidden = false
+        }
+        
+        guard let value = value else { return }
+        lblTitle.text = value.title
+        lblShortTitle.text = value.shortTitle
+        lblPrice.text = value.price
+        ivLogo.image = UIImage(named: value.title)
+
+        lblAdditional.textColor = value.isPositiveAlert ? .revenueColor : .red
+        lblAdditional.text = "$" + value.alert
     }
 }

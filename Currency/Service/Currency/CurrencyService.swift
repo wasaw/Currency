@@ -43,6 +43,19 @@ private extension CurrencyService {
             return "\(number)"
         }
     }
+    
+    func stringToDouble(_ string: String?) -> Double? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale(identifier: "en_US")
+
+        guard let string = string else { return nil }
+        if let number = formatter.number(from: string) {
+            return number.doubleValue
+        } else {
+            return nil
+        }
+    }
 }
 
 // MARK: - Public API
@@ -61,6 +74,8 @@ extension CurrencyService {
                 
                 let isRevenue = ((currency.price - currency.lastPrice) > 0) ? true : false
                 let sign = isRevenue ? "+" : ""
+                let alert = (currency.alert == 0) ? nil : formatNumber(currency.alert)
+                let isPositiveAlert = (currency.price < currency.alert ) ? true : false
                 
                 return CurrencyPreview(title: title,
                                     shortTitle: shortTitle,
@@ -69,11 +84,43 @@ extension CurrencyService {
                                     mktcap: "$ " + abbreviateNumber(currency.mktcap),
                                     volume: "$ " + abbreviateNumber(currency.volumeDay),
                                     circul: shortTitle + " " + abbreviateNumber(currency.circul),
+                                    alert: alert,
                                     isRevenue: isRevenue,
-                                    isFavourite: currency.isFavourite)
+                                    isFavourite: currency.isFavourite,
+                                    isPositiveAlert: isPositiveAlert)
             })
             
             return exchangeRate
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+    
+    func fetchAlert() -> [AlertPreview]? {
+        var alerts: [AlertPreview] = []
+        
+        do {
+            let alertManagedObject = try coreData.fetchAlert()
+            
+            alerts = alertManagedObject.compactMap({ alert in
+                guard let id = alert.id,
+                      let alertPrice = formatNumber(alert.alert),
+                      let price = formatNumber(alert.price),
+                      let title = alert.title,
+                      let shortTitle = alert.shortTitle else { return nil }
+                
+                let isPositiveAlert = (alert.price < alert.alert) ? true : false
+                
+                return AlertPreview(id: id,
+                                    title: title,
+                                    shortTitle: shortTitle,
+                                    price: price,
+                                    alert: alertPrice,
+                                    isPositiveAlert: isPositiveAlert)
+            })
+            
+            return alerts
         } catch {
             print(error.localizedDescription)
             return nil
@@ -108,7 +155,7 @@ extension CurrencyService {
                                                    volumeDay: result.raw.etc.usd.volume24Hourto,
                                                    mktcap: result.raw.etc.usd.mktcap,
                                                    circulatingsupply: result.raw.etc.usd.circulatingsupply))
-            
+
                 _ = exchangeRate.map { [weak self] currency in
                         self?.coreData.save { context in
                             let currencyManagedObject = CurrencyManagedObject(context: context)
@@ -121,6 +168,7 @@ extension CurrencyService {
                             currencyManagedObject.difference = difference
                             currencyManagedObject.mktcap = currency.mktcap
                             currencyManagedObject.circul = currency.circulatingsupply
+                            currencyManagedObject.alert = 0
                             currencyManagedObject.isFavourite = false
                         }
                 }
@@ -128,5 +176,27 @@ extension CurrencyService {
                 break
             }
         }
+    }
+    
+    func setAlert(text: String?, for currency: CurrencyPreview) {
+        guard let value = stringToDouble(text?.lowercased()) else { return }
+        coreData.save { [weak self] context in
+            let alertManagedObject = AlertManagedObject(context: context)
+            alertManagedObject.id = UUID()
+            alertManagedObject.title = currency.title
+            alertManagedObject.alert = value
+            alertManagedObject.shortTitle = currency.shortTitle
+            let price = currency.price.dropFirst().replacingOccurrences(of: ",", with: "")
+            if let price = self?.stringToDouble(price) {
+                alertManagedObject.price = price
+            }
+        }
+    }
+    
+    func updateAlert(text: String?, for alert: AlertPreview) {
+        let text = text?.dropFirst()
+        guard let value = stringToDouble(text?.lowercased()) else { return }
+        
+        CoreDataService.shared.updateAlert(value: value, for: alert.id)
     }
 }

@@ -116,6 +116,7 @@ final class SelectedCurrencyViewController: UIViewController {
         lbl.centerY(inView: btn)
         
         btn.layer.cornerRadius = 24.0
+        btn.addTarget(self, action: #selector(showCustomAlert), for: .touchUpInside)
         btn.backgroundColor = .btnBackgroundColor
         return btn
     }()
@@ -350,6 +351,13 @@ private extension SelectedCurrencyViewController {
         isFavourite.toggle()
         ivLike.image = isFavourite ? UIImage(named: "LikeFull") : UIImage(named: "Like")
         coreData.updateIsFavourite(title: exchangeRate[selectedIndex].title)
+    }
+    
+    @objc private func showCustomAlert() {
+        let customAlertVC = AddAlertViewController(currency: exchangeRate[selectedIndex])
+        customAlertVC.modalPresentationStyle = .overFullScreen
+        customAlertVC.modalTransitionStyle = .crossDissolve
+        present(customAlertVC, animated: true, completion: nil)
     }
 }
 

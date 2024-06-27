@@ -32,6 +32,8 @@
 		BBF779F32C2C516300C5F199 /* CurrencyServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F22C2C516300C5F199 /* CurrencyServiceProtocol.swift */; };
 		BBF779F52C2C99E600C5F199 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F42C2C99E600C5F199 /* CoreDataServiceProtocol.swift */; };
 		BBF779F72C2C9B2600C5F199 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F62C2C9B2600C5F199 /* NetworkService.swift */; };
+		BBF779F92C2D4C5D00C5F199 /* AddAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779F82C2D4C5D00C5F199 /* AddAlertViewController.swift */; };
+		BBF779FB2C2D6B4700C5F199 /* ChangeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF779FA2C2D6B4700C5F199 /* ChangeAlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		BBF779F22C2C516300C5F199 /* CurrencyServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyServiceProtocol.swift; sourceTree = "<group>"; };
 		BBF779F42C2C99E600C5F199 /* CoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceProtocol.swift; sourceTree = "<group>"; };
 		BBF779F62C2C9B2600C5F199 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BBF779F82C2D4C5D00C5F199 /* AddAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertViewController.swift; sourceTree = "<group>"; };
+		BBF779FA2C2D6B4700C5F199 /* ChangeAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				BBF779DA2C29A31E00C5F199 /* AlertViewController.swift */,
 				BBF779DC2C29A4C000C5F199 /* PrivacyPolicyViewController.swift */,
 				BBF779EA2C2AE94300C5F199 /* SelectedCurrencyViewController.swift */,
+				BBF779F82C2D4C5D00C5F199 /* AddAlertViewController.swift */,
+				BBF779FA2C2D6B4700C5F199 /* ChangeAlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -293,10 +299,12 @@
 			files = (
 				BBF779F72C2C9B2600C5F199 /* NetworkService.swift in Sources */,
 				BBF779E12C29BB0100C5F199 /* Network.swift in Sources */,
+				BBF779F92C2D4C5D00C5F199 /* AddAlertViewController.swift in Sources */,
 				BBF779D62C299C8E00C5F199 /* BaseViewController.swift in Sources */,
 				BBF779F32C2C516300C5F199 /* CurrencyServiceProtocol.swift in Sources */,
 				BBF779E62C2ABBA600C5F199 /* Model.xcdatamodeld in Sources */,
 				BBF779AE2C28044600C5F199 /* AppDelegate.swift in Sources */,
+				BBF779FB2C2D6B4700C5F199 /* ChangeAlertViewController.swift in Sources */,
 				BBF779E92C2ABCEA00C5F199 /* CoreDataService.swift in Sources */,
 				BBF779CB2C2959CE00C5F199 /* CustomTabBar.swift in Sources */,
 				BBF779DD2C29A4C000C5F199 /* PrivacyPolicyViewController.swift in Sources */,

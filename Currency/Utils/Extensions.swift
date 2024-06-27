@@ -186,4 +186,26 @@ extension UIColor {
             UIColor(red: 48/255, green: 142/255, blue: 111/255, alpha: 1)
         }
     }
+    
+    static let placeholderColor = UIColor { traitCollection in
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            UIColor(red: 152/255, green: 152/255, blue: 152/255, alpha: 1)
+        case .dark:
+            UIColor(red: 152/255, green: 152/255, blue: 152/255, alpha: 1)
+        @unknown default:
+            UIColor(red: 152/255, green: 152/255, blue: 152/255, alpha: 1)
+        }
+    }
+    
+    static let btnDeleteColor = UIColor { traitCollection in
+        switch traitCollection.userInterfaceStyle {
+        case .light, .unspecified:
+            UIColor(red: 242/255, green: 0, blue: 0, alpha: 1)
+        case .dark:
+            UIColor(red: 242/255, green: 0, blue: 0, alpha: 1)
+        @unknown default:
+            UIColor(red: 242/255, green: 0, blue: 0, alpha: 1)
+        }
+    }
 }

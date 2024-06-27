@@ -33,6 +33,11 @@ extension CoreDataService {
         
         return try viewContext.fetch(fetchRequest)
     }
+    
+    func fetchAlert() throws -> [AlertManagedObject] {
+        let fetchRequest = AlertManagedObject.fetchRequest()
+        return try viewContext.fetch(fetchRequest)
+    }
 
     func save(completion: @escaping(NSManagedObjectContext) throws -> Void) {
         let backgroundContext = persistentContainer.newBackgroundContext()
@@ -61,6 +66,33 @@ extension CoreDataService {
             }
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    
+    func updateAlert(value: Double, for id: UUID) {
+        let fetchRequest = AlertManagedObject.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id ==%@", id as CVarArg)
+        
+        do {
+            let result = try viewContext.fetch(fetchRequest)
+            
+            if let alert = result.first {
+                alert.alert = value
+                try viewContext.save()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func deleteAlert(id: UUID) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest = AlertManagedObject.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id ==%@", id as CVarArg)
+            guard let alert = try? backgroundContext.fetch(fetchRequest).first else { return }
+            backgroundContext.delete(alert)
+            try? backgroundContext.save()
         }
     }
 }
