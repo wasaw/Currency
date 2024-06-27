@@ -110,8 +110,6 @@ private extension BaseOnboardingViewController {
                         paddingTop: Constants.ivPaddingTop,
                         paddingTrailing: -Constants.horizontalPadding,
                         height: Constants.ivHeight)
-        ivScreen.layer.borderColor = UIColor.red.cgColor
-        ivScreen.layer.borderWidth = 1
         
         view.addSubview(lblDescription)
         lblDescription.anchor(leading: view.leadingAnchor,

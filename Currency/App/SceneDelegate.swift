@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let isFirstLaunch = UserDefaults.standard.isFirstLaunch
         if isFirstLaunch {
-            window?.rootViewController = UINavigationController(rootViewController: GetStartedViewController())
+            window?.rootViewController = UINavigationController(rootViewController: LoadingViewController())
             UserDefaults.standard.isFirstLaunch = false
             CurrencyService.shared.loadCurrency()
         } else {
