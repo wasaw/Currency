@@ -13,4 +13,6 @@ protocol CurrencyServiceProtocol: AnyObject {
     func setAlert(text: String?, for currency: CurrencyPreview)
     func updateAlert(text: String?, for alert: AlertPreview)
     func checkNotification()
+    func checkload() -> Bool
+    func setLoad()
 }

@@ -2,7 +2,6 @@
 //  ModelNetwork.swift
 //  Currency
 //
-//  Created by Александр Меренков on 25.06.2024.
 //
 
 import Foundation

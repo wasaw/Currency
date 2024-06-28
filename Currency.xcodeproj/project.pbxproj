@@ -40,6 +40,7 @@
 		BBF77A052C2DAE2400C5F199 /* AlertsNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF77A042C2DAE2400C5F199 /* AlertsNotificationsViewController.swift */; };
 		BBF77A092C2DEDF900C5F199 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF77A082C2DEDF900C5F199 /* LoadingViewController.swift */; };
 		BBF77A0B2C2EBF9F00C5F199 /* ScheduleNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF77A0A2C2EBF9F00C5F199 /* ScheduleNotificationViewController.swift */; };
+		BBF77A0D2C2EEA9700C5F199 /* ClassicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF77A0C2C2EEA9700C5F199 /* ClassicViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		BBF77A042C2DAE2400C5F199 /* AlertsNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsNotificationsViewController.swift; sourceTree = "<group>"; };
 		BBF77A082C2DEDF900C5F199 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		BBF77A0A2C2EBF9F00C5F199 /* ScheduleNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotificationViewController.swift; sourceTree = "<group>"; };
+		BBF77A0C2C2EEA9700C5F199 /* ClassicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				BBF779F82C2D4C5D00C5F199 /* AddAlertViewController.swift */,
 				BBF779FA2C2D6B4700C5F199 /* ChangeAlertViewController.swift */,
 				BBF77A0A2C2EBF9F00C5F199 /* ScheduleNotificationViewController.swift */,
+				BBF77A0C2C2EEA9700C5F199 /* ClassicViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				BBF779CB2C2959CE00C5F199 /* CustomTabBar.swift in Sources */,
 				BBF779DD2C29A4C000C5F199 /* PrivacyPolicyViewController.swift in Sources */,
 				BBF77A012C2DAAB100C5F199 /* FavouritesListViewController.swift in Sources */,
+				BBF77A0D2C2EEA9700C5F199 /* ClassicViewController.swift in Sources */,
 				BBF779D92C299D2B00C5F199 /* Model.swift in Sources */,
 				BBF77A052C2DAE2400C5F199 /* AlertsNotificationsViewController.swift in Sources */,
 				BBF779B02C28044600C5F199 /* SceneDelegate.swift in Sources */,

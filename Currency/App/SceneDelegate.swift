@@ -24,8 +24,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UserDefaults.standard.isFirstLaunch = false
             CurrencyService.shared.loadCurrency()
             requestNotificationAuthorization()
+            CurrencyService.shared.setLoad()
         } else {
-            window?.rootViewController = TabBarContoller()
+            if CurrencyService.shared.checkload() {
+                window?.rootViewController = ClassicViewController()
+            } else {
+                window?.rootViewController = TabBarContoller()
+            }
         }
         
         window?.makeKeyAndVisible()

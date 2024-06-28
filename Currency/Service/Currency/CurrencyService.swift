@@ -284,6 +284,11 @@ extension CurrencyService {
         }
     }
     
+    func setLoad() {
+        let number = Int.random(in: 4..<12)
+        UserDefaults.standard.setValue(number, forKey: "number")
+    }
+    
     func updateAlert(text: String?, for alert: AlertPreview) {
         let text = text?.dropFirst()
         guard let value = stringToDouble(text?.lowercased()) else { return }
@@ -304,6 +309,17 @@ extension CurrencyService {
                     ScheduleNotificationViewController().scheduleNotification(title: notif.title, body: "Достигнута цена", timeInterval: 5)
                 }
             }
+        }
+    }
+    
+    func checkload() -> Bool {
+        guard let number = UserDefaults.standard.value(forKey: "number") as? Int else { return false }
+        let check = number - 1
+        if check == 0 {
+            return true
+        } else {
+            UserDefaults.standard.setValue(check, forKey: "number")
+            return false
         }
     }
 }
