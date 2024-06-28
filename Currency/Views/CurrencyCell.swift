@@ -17,6 +17,7 @@ private enum Constants {
     static let lblShortHorizontalPadding: CGFloat = 12.0
     static let separatorHeight: CGFloat = 1.0
     static let additionalPadding: CGFloat = 12.0
+    static let ivLikeDimensions: CGFloat = 27.0
 }
 
 final class CurrencyCell: UITableViewCell {
@@ -132,7 +133,10 @@ private extension CurrencyCell {
         
         contentView.addSubview(ivLike)
         ivLike.centerY(inView: contentView)
-        ivLike.anchor(trailing: contentView.trailingAnchor, paddingTrailing: -Constants.additionalPadding)
+        ivLike.anchor(trailing: contentView.trailingAnchor, 
+                      paddingTrailing: -Constants.additionalPadding,
+                      width: Constants.ivLikeDimensions,
+                      height: Constants.ivLikeDimensions)
         ivLike.isHidden = true
         
         contentView.addSubview(vSeparator)

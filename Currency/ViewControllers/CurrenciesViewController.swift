@@ -62,7 +62,7 @@ final class CurrenciesViewController: BaseViewController {
 
 private extension CurrenciesViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = SelectedCurrencyViewController(exchangeRate: exchangeRate, selectedIndex: indexPath.row)
+        let vc = SelectedCurrencyViewController(exchangeRate: filteredExchangeRate, selectedIndex: indexPath.row)
         present(vc, animated: true)
     }
     

@@ -155,6 +155,97 @@ extension CurrencyService {
                                                    volumeDay: result.raw.etc.usd.volume24Hourto,
                                                    mktcap: result.raw.etc.usd.mktcap,
                                                    circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Tether",
+                                                   shortTitle: "USDT",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Dogecoin",
+                                                   shortTitle: "DOGE",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Cardano",
+                                                   shortTitle: "ADA",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Chainlink",
+                                                   shortTitle: "LINK",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Polkadot",
+                                                   shortTitle: "DOT",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Polygon",
+                                                   shortTitle: "MATIC",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Maker",
+                                                   shortTitle: "MKR",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Monero",
+                                                   shortTitle: "XMR",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Kaspa",
+                                                   shortTitle: "KAS",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Litecoin",
+                                                   shortTitle: "LTC",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Notcoin",
+                                                   shortTitle: "NOT",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Theta",
+                                                   shortTitle: "THETA",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
+                exchangeRate.append(CurrencyModel(title: "Akash",
+                                                   shortTitle: "AKT",
+                                                   price: result.raw.eth.usd.price,
+                                                   lastPrice: result.raw.eth.usd.openday,
+                                                   volumeDay: result.raw.etc.usd.volume24Hourto,
+                                                   mktcap: result.raw.etc.usd.mktcap,
+                                                   circulatingsupply: result.raw.etc.usd.circulatingsupply))
 
                 _ = exchangeRate.map { [weak self] currency in
                         self?.coreData.save { context in
@@ -198,5 +289,21 @@ extension CurrencyService {
         guard let value = stringToDouble(text?.lowercased()) else { return }
         
         CoreDataService.shared.updateAlert(value: value, for: alert.id)
+    }
+    
+    func checkNotification() {
+        let currency = fetchCurrency()
+        let alert = fetchAlert()
+        
+        guard let currency = currency,
+              let alert = alert else { return }
+        
+        currency.forEach { cash in
+            alert.forEach { notif in
+                if cash.title == notif.title && cash.price == notif.price {
+                    ScheduleNotificationViewController().scheduleNotification(title: notif.title, body: "Достигнута цена", timeInterval: 5)
+                }
+            }
+        }
     }
 }
