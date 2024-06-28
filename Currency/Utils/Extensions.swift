@@ -220,3 +220,9 @@ extension UIColor {
         }
     }
 }
+
+// MARK: - Notification
+
+extension Notification.Name {
+    static let objectDeleted = Notification.Name("objectDeleted")
+}

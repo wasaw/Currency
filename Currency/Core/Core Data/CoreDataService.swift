@@ -93,6 +93,7 @@ extension CoreDataService {
             guard let alert = try? backgroundContext.fetch(fetchRequest).first else { return }
             backgroundContext.delete(alert)
             try? backgroundContext.save()
+            NotificationCenter.default.post(name: .objectDeleted, object: nil)
         }
     }
 }

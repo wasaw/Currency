@@ -15,10 +15,7 @@ final class AlertViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let result = CurrencyService.shared.fetchAlert() {
-            alertCurrency = result
-        }
-        
+        load()
         hideSearch()
     }
     
@@ -44,6 +41,23 @@ private extension AlertViewController {
         let customAlertVC = ChangeAlertViewController(currency: alertCurrency[indexPath.row])
         customAlertVC.modalPresentationStyle = .overFullScreen
         customAlertVC.modalTransitionStyle = .crossDissolve
+        customAlertVC.delegate = self
         present(customAlertVC, animated: true, completion: nil)
+    }
+    
+    func load() {
+        if let result = CurrencyService.shared.fetchAlert() {
+            alertCurrency = result
+        }
+        
+        tvCurrency.reloadData()
+    }
+}
+
+// MARK: - AlertDelegate
+
+extension AlertViewController: AlertDelegate {
+    func update() {
+        load()
     }
 }

@@ -6,6 +6,10 @@
 
 import UIKit
 
+protocol AlertDelegate: AnyObject {
+    func update()
+}
+
 private enum Constants {
     static let cornerRadius: CGFloat = 25.0
     static let vAlertWidth: CGFloat = 252.0
@@ -26,6 +30,8 @@ private enum Constants {
 final class ChangeAlertViewController: UIViewController {
     
 // MARK: - Properties
+    
+    weak var delegate: AlertDelegate?
     
     private let currency: AlertPreview
     
@@ -128,9 +134,14 @@ final class ChangeAlertViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(handleObjectDeleted), name: .objectDeleted, object: nil)
         configureUI()
     }
 }
@@ -212,6 +223,7 @@ private extension ChangeAlertViewController {
     
     @objc func handleOk() {
         CurrencyService.shared.updateAlert(text: tfPrice.text, for: currency)
+        delegate?.update()
         dismiss(animated: true)
     }
     
@@ -221,6 +233,12 @@ private extension ChangeAlertViewController {
     
     @objc func handleDelete() {
         CoreDataService.shared.deleteAlert(id: currency.id)
-        dismiss(animated: true)
+    }
+    
+    @objc func handleObjectDeleted() {
+        DispatchQueue.main.async { [weak self] in
+            self?.delegate?.update()
+            self?.dismiss(animated: true)
+        }
     }
 }
