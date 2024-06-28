@@ -6,6 +6,10 @@
 
 import UIKit
 
+protocol FavouriteDelegate: AnyObject {
+    func update()
+}
+
 private enum Constants {
     static let ivDimensions: CGFloat = 51.63
     static let lblVerticalPadding: CGFloat = 12.0
@@ -20,8 +24,10 @@ final class CurrencyCell: UITableViewCell {
     
 // MARK: - Properties
     
+    weak var delegate: FavouriteDelegate?
+
     private let coreData = CoreDataService.shared
-    
+        
     private lazy var ivLogo: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "Cell")
@@ -146,6 +152,7 @@ private extension CurrencyCell {
         ivLike.image = isFavourite ? UIImage(named: "LikeFull") : UIImage(named: "Like")
         guard let title = lblTitle.text else { return }
         CoreDataService.shared.updateIsFavourite(title: title)
+        delegate?.update()
     }
 }
 
@@ -173,6 +180,7 @@ extension CurrencyCell {
         if value.isFavourite {
             ivLike.image = UIImage(named: "LikeFull")
             isFavourite.toggle()
+            
         }
         
         guard let isPositiveAlert = value.isPositiveAlert,

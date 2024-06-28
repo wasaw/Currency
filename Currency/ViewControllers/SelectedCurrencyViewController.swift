@@ -197,6 +197,8 @@ private extension SelectedCurrencyViewController {
         ivLogo.image = UIImage(named: currency.title)
         lblTitleCurrency.text = currency.title
         lblPrice.text = currency.price
+        ivLike.image = currency.isFavourite ? UIImage(named: "LikeFull") : UIImage(named: "Like")
+        isFavourite = currency.isFavourite
     }
     
     func configureUI() {
