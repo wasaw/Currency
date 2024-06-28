@@ -10,9 +10,8 @@ private enum Constants {
     static let lblPaddingTop: CGFloat = 45.0
     static let horizontalPadding: CGFloat = 35.0
     static let ivPaddingTop: CGFloat = 60.0
-//    static let ivWidth: CGFloat = 290.0
     static let ivHeight: CGFloat = 297.0
-    static let descriptionPaddingTop: CGFloat = 35.0
+    static let descriptionPaddingTop: CGFloat = 15.0
     static let btnPaddingBottom: CGFloat = 70.0
     static let btnWidth: CGFloat = 167.0
     static let btnHeight: CGFloat = 46.0

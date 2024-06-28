@@ -30,7 +30,6 @@ final class CurrencyCell: UITableViewCell {
         
     private lazy var ivLogo: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "Cell")
         iv.anchor(width: Constants.ivDimensions, height: Constants.ivDimensions)
         return iv
     }()

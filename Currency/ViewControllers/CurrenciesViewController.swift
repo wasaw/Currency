@@ -40,6 +40,12 @@ final class CurrenciesViewController: BaseViewController {
         return true
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        
+        return true
+    }
+    
 // MARK: - Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
